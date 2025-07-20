@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3; url=https://www.languageartlife.com">
+    <title>Redireccionando | Language Art Life</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .redirect-container {
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+        .redirect-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .spinner {
+            width: 5rem;
+            height: 5rem;
+            border-width: 0.35em;
+        }
+        .btn-cta {
+            background-color: #fff;
+            color: #2575fc;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="redirect-container d-flex align-items-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="redirect-card bg-white text-dark p-5 text-center">
+                        <div class="mb-4">
+                            <i class="fas fa-rocket fa-4x text-primary mb-3"></i>
+                            <h1 class="fw-bold">¡Estás siendo redirigido!</h1>
+                            <p class="lead">Language Art Life ahora está en un nuevo hogar.</p>
+                        </div>
+
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="spinner-border text-primary spinner" role="status">
+                                <span class="visually-hidden">Cargando...</span>
+                            </div>
+                        </div>
+
+                        <p class="mb-4">Serás llevado automáticamente en <span id="countdown" class="fw-bold">3</span> segundos...</p>
+
+                        <a href="https://www.languageartlife.com" class="btn btn-cta btn-lg px-4 py-2">
+                            <i class="fas fa-external-link-alt me-2"></i> Ir ahora mismo
+                        </a>
+
+                        <div class="mt-4 text-muted small">
+                            <p>Si no funciona la redirección automática, copia este enlace:<br>
+                            <code class="user-select-all">https://www.languageartlife.com</code></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contador regresivo -->
+    <script>
+        let seconds = 3;
+        const countdown = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            seconds--;
+            countdown.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
